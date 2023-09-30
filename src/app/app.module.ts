@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { StoreModule } from '@ngrx/store';
+import { NzLayoutModule } from 'ng-zorro-antd/layout';
 
 @NgModule({
   declarations: [AppComponent],
@@ -11,6 +12,7 @@ import { StoreModule } from '@ngrx/store';
     BrowserModule,
     AppRoutingModule,
     StoreModule.forRoot({}, {}),
+    NzLayoutModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

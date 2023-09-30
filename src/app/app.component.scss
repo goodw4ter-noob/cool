@@ -1,0 +1,17 @@
+
+nz-layout {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: space-between;
+
+  nz-content {
+    height: 86%;
+    background-color: #141414;
+  }
+
+  nz-header, nz-footer {
+    height: 7%;
+    background-color: #222222;
+  }
+}
