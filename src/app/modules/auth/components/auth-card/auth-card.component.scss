@@ -1,0 +1,56 @@
+.auth-card-wrapper {
+  color: #fff;
+  width: 300px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  .sign-in {
+    height: 70%;
+    background-color: #222222;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+
+    &__input {
+      width: 250px;
+      background-color: #333333;
+      border-radius: 5px;
+      font-size: 13px;
+      color: #fff;
+      padding: 7px;
+    }
+
+    &__button {
+      width: 250px;
+      border-radius: 7px;
+      height: 35px;
+    }
+  }
+
+  .sign-up {
+    height: 30%;
+    background-color: #222222;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__button {
+      width: 250px;
+      border-radius: 7px;
+      height: 35px;
+      background-color: #4bb34b;
+      color: #fff;
+      border: none;
+    }
+
+    &__button:hover {
+      background-color: #44a044;
+    }
+  }
+}

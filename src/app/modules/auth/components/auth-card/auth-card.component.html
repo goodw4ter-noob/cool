@@ -1,1 +1,23 @@
-<p>auth-card works!</p>
+<div class="auth-card-wrapper">
+  <div class="sign-in">
+    <input
+      class="sign-in__input"
+      nz-input
+      placeholder="Телефон или почта"
+      [formControl]="input"
+      type="email"
+    />
+    <button
+      class="sign-in__button"
+      nz-button
+      nzType="default"
+    >Войти</button>
+  </div>
+  <div class="sign-up">
+    <button
+      class="sign-up__button"
+      nz-button
+      nzType="default"
+    >Зарегистрироваться</button>
+  </div>
+</div>

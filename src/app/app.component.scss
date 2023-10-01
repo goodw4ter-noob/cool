@@ -6,12 +6,13 @@ nz-layout {
   justify-content: space-between;
 
   nz-content {
-    height: 86%;
+    margin: 0;
+    height: calc(100% - 20vh);
     background-color: #141414;
   }
 
   nz-header, nz-footer {
-    height: 7%;
+    height: 10vh;
     background-color: #222222;
   }
 }
