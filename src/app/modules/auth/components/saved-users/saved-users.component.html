@@ -1,1 +1,50 @@
-<div class="saved-users-wrapper"></div>
+<div class="saved-users-wrapper">
+  <ng-container>
+    <nz-card
+      nzHoverable
+      class="saved-users-wrapper__card"
+      [nzCover]="coverTemplate"
+      appShowCloseBtn
+    >
+      <nz-card-meta
+        class="saved-users-wrapper__card__meta"
+        nzTitle="Europe Street beat"
+      ></nz-card-meta>
+      <span
+        class="close-btn"
+        nz-icon
+        nzType="close-circle"
+        nzTheme="outline"
+      ></span>
+    </nz-card>
+    <ng-template #coverTemplate>
+      <img
+        alt="example"
+        class="saved-users-wrapper__image"
+        src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
+      />
+    </ng-template>
+  </ng-container>
+
+  <ng-container>
+    <nz-card
+      nzHoverable
+      class="saved-users-wrapper__card"
+      [nzCover]="newUserTemplate"
+    >
+      <nz-card-meta
+        class="saved-users-wrapper__card__meta"
+        nzTitle="Войти в новый аккаунт"
+      ></nz-card-meta>
+    </nz-card>
+    <ng-template #newUserTemplate>
+      <span
+        class="saved-users-wrapper__icon"
+        nz-icon
+        nzType="plus-circle"
+        nzTheme="outline"
+      ></span>
+    </ng-template>
+  </ng-container>
+
+</div>

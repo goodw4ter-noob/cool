@@ -12,12 +12,16 @@ import {
 } from '@angular/forms';
 import { NzFormModule } from 'ng-zorro-antd/form';
 import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzCardModule } from 'ng-zorro-antd/card';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { ShowCloseBtnDirective } from './directives/show-close-btn.directive';
 
 @NgModule({
   declarations: [
     AuthComponent,
     AuthCardComponent,
     SavedUsersComponent,
+    ShowCloseBtnDirective,
   ],
   imports: [
     CommonModule,
@@ -28,6 +32,8 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
     NzFormModule,
     NzInputNumberModule,
     NzButtonModule,
+    NzCardModule,
+    NzIconModule,
   ],
 })
 export class AuthModule {}
