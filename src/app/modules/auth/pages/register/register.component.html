@@ -1,0 +1,35 @@
+<!-- eslint-disable @angular-eslint/template/label-has-associated-control -->
+<div class="register-wrapper">
+  <div class="register-card">
+    <div class="register-card__photo"></div>
+    <div class="register-card__login">
+      <div class="register-card__login__wrapper">
+        <h2 class="register-card__login__wrapper__title">Введите email</h2>
+        <p class="register-card__login__wrapper__title">Ваш email будет использоваться для входа в аккаунт</p>
+        <input
+          [formControl]="email"
+          class="register-card__login__wrapper__input"
+          nz-input
+          type="email"
+        />
+        <div class="register-card__login__wrapper__confirm">
+          <label
+            nz-checkbox
+            [(ngModel)]="checked"
+          >
+            <span class="checkbox-label">Сохранить вход</span>
+          </label>
+          <button
+            [disabled]="!email.value"
+            class="continue-button"
+            nz-button
+            nzType="default"
+            type="submit"
+            (click)="checkEmail()"
+          >{{ isEmailValid() ? registerTitle : continueTitle }}</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

@@ -1,23 +1,49 @@
 <div class="auth-card-wrapper">
   <div class="sign-in">
-    <input
-      class="sign-in__input"
-      nz-input
-      placeholder="Телефон или почта"
-      [formControl]="input"
-      type="email"
-    />
-    <button
-      class="sign-in__button"
-      nz-button
-      nzType="default"
-    >Войти</button>
+    <form
+      nz-form
+      [formGroup]="loginForm"
+      class="sign-in__form"
+      (ngSubmit)="login()"
+    >
+      <nz-form-item>
+        <nz-form-control>
+          <input
+            formControlName="login"
+            class="sign-in__input"
+            nz-input
+            [placeholder]="loginPlaceholder"
+            type="email"
+          />
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-control>
+          <input
+            formControlName="password"
+            class="sign-in__input"
+            nz-input
+            [placeholder]="passwordPlaceholder"
+            type="password"
+          />
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <button
+          class="sign-in__button"
+          nz-button
+          nzType="default"
+          type="submit"
+        >Войти</button>
+      </nz-form-item>
+    </form>
   </div>
   <div class="sign-up">
     <button
       class="sign-up__button"
       nz-button
       nzType="default"
+      (click)="goToRegistration()"
     >Зарегистрироваться</button>
   </div>
 </div>

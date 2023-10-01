@@ -1,0 +1,65 @@
+.register-wrapper {
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .register-card {
+    width: 700px;
+    height: 370px;
+    display: flex;
+    padding: 10px;
+    background-color: #222222;
+    border-radius: 10px;
+
+    &__photo {
+      width: 50%;
+      background-color: #19191a;
+      border-radius: 10px;
+    }
+
+    &__login {
+      width: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      &__wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+
+        &__title {
+          color: #fff;
+        }
+
+        &__input {
+          width: 250px;
+          background-color: #333333;
+          border-radius: 5px;
+          font-size: 13px;
+          color: #fff;
+          padding: 7px;
+        }
+
+        &__confirm {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 10px;
+
+          .checkbox-label {
+            color: #fff;
+          }
+
+          .continue-button {
+            width: 250px;
+            border-radius: 7px;
+            height: 35px;
+          }
+        }
+      }
+    }
+  }
+}
