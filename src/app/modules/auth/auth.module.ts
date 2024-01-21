@@ -17,6 +17,7 @@ import { NzIconModule } from 'ng-zorro-antd/icon';
 import { ShowCloseBtnDirective } from './directives/show-close-btn.directive';
 import { RegisterComponent } from './pages/register/register.component';
 import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
+import { NzAutocompleteModule } from 'ng-zorro-antd/auto-complete';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
     NzCardModule,
     NzIconModule,
     NzCheckboxModule,
+    NzAutocompleteModule
   ],
 })
 export class AuthModule {}

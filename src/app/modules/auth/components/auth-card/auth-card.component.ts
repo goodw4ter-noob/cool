@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import {
+  FormBuilder,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { APP_ROUTES_NAMES } from 'src/app/modules/shared/types/constants';
 import { ModelToForm } from 'src/app/modules/shared/types/types';
@@ -45,14 +49,11 @@ export class AuthCardComponent implements OnInit {
   }
 
   private initForm(): void {
-    const form: FormGroup<LoginForm> = this.fb.group({
-      login: this.fb.control<string>('', {
-        nonNullable: true,
-      }),
-      password: this.fb.control<string>('', {
-        nonNullable: true,
-      }),
-    });
+    const form: FormGroup<LoginForm> =
+      this.fb.nonNullable.group({
+        login: ['', Validators.required],
+        password: ['', Validators.required],
+      });
 
     this.loginForm = form;
   }

@@ -6,30 +6,54 @@
       <div class="register-card__login__wrapper">
         <h2 class="register-card__login__wrapper__title">Введите email</h2>
         <p class="register-card__login__wrapper__title">Ваш email будет использоваться для входа в аккаунт</p>
-        <input
-          [formControl]="email"
-          class="register-card__login__wrapper__input"
-          nz-input
-          type="email"
-        />
-        <div class="register-card__login__wrapper__confirm">
-          <label
-            nz-checkbox
-            [(ngModel)]="checked"
-          >
-            <span class="checkbox-label">Сохранить вход</span>
-          </label>
-          <button
-            [disabled]="!email.value"
-            class="continue-button"
-            nz-button
-            nzType="default"
-            type="submit"
-            (click)="checkEmail()"
-          >{{ isEmailValid() ? registerTitle : continueTitle }}</button>
-        </div>
-      </div>
+        <form
+          nz-form
+          [formGroup]="form"
+          (submit)="submit()"
+        >
+          <nz-form-item>
+            <nz-form-control
+              [nzErrorTip]="userErrorTpl"
+              nzHasFeedback
+              [nzValidatingTip]="validatingTip"
+            >
+              <input
+                formControlName="email"
+                class="register-card__login__wrapper__input"
+                nz-input
+                type="email"
+                nzSize="large"
+              />
+            </nz-form-control>
+          </nz-form-item>
 
+          <div class="register-card__login__wrapper__confirm">
+            <label
+              nz-checkbox
+              [(nzChecked)]="checked"
+            >
+              <span class="checkbox-label">Сохранить вход</span>
+            </label>
+            <button
+              [disabled]="!form.controls.email.valid"
+              class="continue-button"
+              nz-button
+              nzType="default"
+              type="submit"
+            >{{ registerTitle }}</button>
+          </div>
+        </form>
+        <ng-template
+          #userErrorTpl
+          let-control
+        >
+          @if (control.hasError(emailValidationError)) {
+          <ng-container>
+            {{control.errors[emailValidationError]}}
+          </ng-container>
+          }
+        </ng-template>
+      </div>
     </div>
   </div>
 </div>
