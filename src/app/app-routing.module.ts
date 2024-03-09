@@ -15,6 +15,13 @@ const routes: Routes = [
         m => m.AuthModule
       ),
   },
+  {
+    path: APP_ROUTES_NAMES.mainPage,
+    loadChildren: () =>
+      import('./modules/main/main.module').then(
+        m => m.MainModule
+      ),
+  },
 ];
 
 @NgModule({

@@ -2,7 +2,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { emailValidator } from 'src/app/modules/shared/helper';
-import { EMAIL_VALIDATION_ERROR, REGISTER_TITLE, VALIDATING_TIP } from 'src/app/modules/shared/types/constants';
+import { EMAIL_VALIDATION_ERROR, REGISTER_TITLE, SAVE_CREDENTIALS_TITLE, VALIDATING_TIP } from 'src/app/modules/shared/types/constants';
 import { ModelToForm } from 'src/app/modules/shared/types/types';
 
 interface RegisterFormModel {
@@ -20,6 +20,7 @@ export class RegisterComponent implements OnInit {
   public emailValidationError = EMAIL_VALIDATION_ERROR;
   public validatingTip = VALIDATING_TIP;
   public registerTitle = REGISTER_TITLE;
+  public saveCredentialsTitle = SAVE_CREDENTIALS_TITLE;
   public form!: FormGroup<RegisterForm>;
 
   public checked = true;

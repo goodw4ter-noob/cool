@@ -32,10 +32,10 @@
               nz-checkbox
               [(nzChecked)]="checked"
             >
-              <span class="checkbox-label">Сохранить вход</span>
+              <span class="checkbox-label">{{ saveCredentialsTitle }}</span>
             </label>
             <button
-              [disabled]="!form.controls.email.valid"
+              [disabled]="form.controls.email.invalid"
               class="continue-button"
               nz-button
               nzType="default"

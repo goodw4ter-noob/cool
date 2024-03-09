@@ -1,0 +1,34 @@
+:host {
+  text-align: center;
+}
+
+nz-layout {
+  width: 100%;
+  height: 100%;
+  display: flex;
+
+  .sider {
+    background: #3ba0e9;
+    color: #fff;
+    border: 5px solid green;
+  }
+
+  .work-area {
+    border: 5px solid blue;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    .header {
+      background: #7dbcea;
+      color: #fff;
+      border: 5px solid yellow;
+    }
+
+    .content {
+      background: rgba(16, 142, 233, 1);
+      color: #fff;
+      border: 5px solid pink;
+    }
+  }
+}

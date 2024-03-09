@@ -6,23 +6,27 @@ import { AppComponent } from './app.component';
 import { StoreModule } from '@ngrx/store';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HttpClientModule } from '@angular/common/http';
+import {
+  HTTP_INTERCEPTORS,
+  HttpClientModule,
+} from '@angular/common/http';
 import { IconDefinition } from '@ant-design/icons-angular';
 import {
   StepBackwardOutline,
   CaretLeftOutline,
   SettingOutline,
   PlusCircleOutline,
-  CloseCircleOutline
+  CloseCircleOutline,
 } from '@ant-design/icons-angular/icons';
 import { NzIconModule } from 'ng-zorro-antd/icon';
+import { AuthInterceptorService } from './modules/auth/api/auth-interceptor.service';
 
 const icons: IconDefinition[] = [
   StepBackwardOutline,
   CaretLeftOutline,
   SettingOutline,
   PlusCircleOutline,
-  CloseCircleOutline
+  CloseCircleOutline,
 ];
 
 @NgModule({
@@ -36,7 +40,13 @@ const icons: IconDefinition[] = [
     HttpClientModule,
     NzIconModule.forChild(icons),
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptorService,
+      multi: true,
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
