@@ -2,6 +2,7 @@ export const APP_ROUTES_NAMES = {
   auth: 'auth',
   registration: 'registration',
   mainPage: 'main-page',
+  profile: 'profile',
 };
 
 export const emailValidationRegExp = /^\S+@\S+\.\S+$/;

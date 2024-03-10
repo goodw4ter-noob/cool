@@ -1,0 +1,15 @@
+<nz-collapse [nzBordered]="false">
+  @for (panel of panels; track panel) {
+  <nz-collapse-panel
+    [nzHeader]="panel.name"
+    [nzActive]="panel.active"
+  >
+    <button
+      nz-button
+      nzType="default"
+      (click)="navigate(panel.url)"
+    >{{ panel.content }}</button>
+  </nz-collapse-panel>
+  }
+
+</nz-collapse>
